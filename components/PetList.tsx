@@ -5,11 +5,12 @@ import {
   TextInput,
   TouchableOpacity,
 } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import pets from "@/data/pets";
 import PetItem from "./PetItem";
 
 const PetList = () => {
+  const petList = pets.map((pet) => <PetItem key={pet.id} pet={pet} />);
   return (
     <ScrollView
       contentContainerStyle={styles.container}
@@ -35,9 +36,7 @@ const PetList = () => {
       </ScrollView>
 
       {/* Pet List */}
-      {pets.map((pet) => (
-        <PetItem key={pet.id} pet={pet} />
-      ))}
+      {petList}
     </ScrollView>
   );
 };
