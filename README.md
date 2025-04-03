@@ -44,6 +44,7 @@ Pets are stored with the following properties:
 
 ## Getting Started
 
-1. Clone the repository
-2. Install dependencies with `npm install`
-3. Run the app with `npx expo start`
+1. Fork the repository
+2. Clone your forked version
+3. Install dependencies with `npm install`
+4. Run the app with `npx expo start`
