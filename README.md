@@ -1,50 +1,49 @@
-# Welcome to your Expo app 👋
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+# Pet Adoption App
 
-## Get started
+A React Native mobile application for pet adoption built with Expo.
 
-1. Install dependencies
+## Features
 
-   ```bash
-   npm install
-   ```
+- Browse available pets for adoption
+- Filter pets by type (Cat, Dog, Rabbit)
+- Search pets by name
+- Interactive pet animations on tap
+- Clean and intuitive UI
 
-2. Start the app
+## Technical Details
 
-   ```bash
-    npx expo start
-   ```
+The app is built using:
+- React Native with Expo
+- TypeScript for type safety
 
-In the output, you'll find options to open the app in a
+### Key Components
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- `PetList`: Main component that displays the list of pets
+- `PetItem`: Individual pet card component showing pet details and interactive buttons
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### Data Structure
 
-## Get a fresh project
+Pets are stored with the following properties:
+- id: Unique identifier
+- name: Pet's name
+- description: Short description
+- type: Animal type (Cat/Dog/Rabbit)
+- image: Static image URL
+- image2: Animated GIF URL for interaction
 
-When you're ready, run:
+## UI Features
 
-```bash
-npm run reset-project
-```
+- Custom styled components
+- Responsive design
+- Interactive animations
+- Filter buttons for pet types
+- Search functionality
+- Shadow effects for depth
+- Consistent color scheme with #f9e3be as primary background
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Getting Started
 
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+1. Clone the repository
+2. Install dependencies with `npm install`
+3. Run the app with `npx expo start`
