@@ -1,6 +1,14 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  Image,
+  RefreshControl,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import React from "react";
 import { useState } from "react";
+import PetList from "./PetList";
 
 interface PetItemProps {
   pet: {
@@ -10,15 +18,21 @@ interface PetItemProps {
     type: string;
     image: string;
     image2: string;
+    adopted: Boolean;
   };
 }
 
 const PetItem = ({ pet }: PetItemProps) => {
   const [imageState, setImage] = useState(pet.image); //image variable has initial value as pet.image
+  const [adoption, setAdoption] = useState(pet); //query variable has initial value as ""
   function showImage2(item: any): void {
     setImage(item.image2);
   }
-
+  function adoptPet(item: any): void {
+    setAdoption(item);
+    item.adopted = true;
+    alert("Do you want to adopt " + item.name + "?");
+  }
   return (
     <View style={styles.container}>
       <View style={styles.petInfo}>
@@ -36,7 +50,10 @@ const PetItem = ({ pet }: PetItemProps) => {
           <Text style={styles.buttonText}>Pet</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.adoptButton}>
+        <TouchableOpacity
+          style={styles.adoptButton}
+          onPress={() => adoptPet(pet)}
+        >
           <Text style={styles.buttonText}>Adopt</Text>
         </TouchableOpacity>
       </View>

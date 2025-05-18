@@ -11,15 +11,17 @@ import PetItem from "./PetItem";
 
 const PetList = () => {
   const [query, setQuery] = useState(""); //query variable has initial value as ""
-  const [type, setType] = useState(""); //query variable has initial value as ""
+  const [type, setType] = useState(""); //type variable has initial value as ""
 
   const petList = pets
     .filter((pet) => pet.name.toLowerCase().includes(query.toLowerCase()))
     .filter((pet) => pet.type.toLowerCase().includes(type.toLowerCase()))
+    .filter((pet) => pet.adopted == false)
     .map((pet) => <PetItem key={pet.id} pet={pet} />);
   function setPetType(item: any): void {
     setType(item);
   }
+
   return (
     <ScrollView
       contentContainerStyle={styles.container}
